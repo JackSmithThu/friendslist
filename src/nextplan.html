@@ -5,6 +5,7 @@
 </head>
 <body>
     @@include('include/navbar.html')
+	@@include('include/insertplans.html')
 	<script type="text/javascript">
 	$(document).ready(function(){
 		$("#nextplan").addClass("active");
@@ -12,9 +13,8 @@
     </script>
 	<div class="container">
       <h1>下一步计划 <small>查看每个好友的动态</small></h1>
-      <div class="jumbotron">  
-         <div class="page-header">   
-         </div>
+      <div class="jumbotron"> 
+        <!-- @@include('include/subplans.html')	-->  
       </div>
     </div>
 </body>

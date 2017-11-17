@@ -1,0 +1,63 @@
+﻿<script type="text/javascript">
+	$(document).ready(function(){
+		  var obj = {
+  "status": 0,
+  "message": "success",
+  "num": 4,
+  "data": [
+    {
+      "plan": "请李成吃火锅",
+      "name": "李成",
+	  "date": "2017年11月18日",
+      "id": 3
+    },
+    {
+      "plan": "请教刘宁前端的问题",
+      "name": "刘宁",
+	  "date": "2017年11月19日",
+      "id": 4
+    },
+    {
+      "plan": "请王朝吃牛肉火锅",
+      "name": "王朝",
+	  "date": "2017年11月20日",
+      "id": 6
+    },
+    {
+      "plan": "找品哥去唱歌",
+      "name": "张艺品",
+	  "date": "2017年11月21日",
+      "id": 5
+    }
+  ]
+}
+	for (var i=0;i<obj.data.length;i++)
+    {
+        var element= "<a href=\"http://baidu.com\">" 
+		             + "<div class=\""
+					 + getType(i)
+					 + "\">"
+					 + "<div class=\"panel-heading\">"
+                     + "<span><h3 class=\"panel-title\">"
+					 + obj.data[i].date
+					 + "</h3></span> </div>"
+					 + "<div class=\"panel-body\">"
+					 + "<span class=\"glyphicon glyphicon-time\" aria-hidden=\"true\"></span>"
+					 + "<span> <strong>"
+					 + obj.data[i].name
+					 + "</strong> </span> "
+					 + "<span class=\"text-muted small\">"
+					 + obj.data[i].plan
+					 + "</span> </div> </div> </a>";
+        $(".jumbotron").append(element);		
+    }
+    });
+	
+	function getType(num)
+    {
+        if(num % 4 == 0) return "panel panel-success";
+		if(num % 4 == 1) return "panel panel-info";
+		if(num % 4 == 2) return "panel panel-warning";
+		if(num % 4 == 3) return "panel panel-danger";
+    }
+</script>

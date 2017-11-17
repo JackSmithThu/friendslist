@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn-Hans">
 <head>
 	@@include('include/head.html')
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 </head>
 <body>
     @@include('include/navbar.html')
+	@@include('include/insertfriends.html')
 	<script type="text/javascript">
 	$(document).ready(function(){
 		$("#friendslist").addClass("active");
     });
     </script>
 	<div class="container">
-      <h1>好友列表 <small>查看每个好友的信息</small></h1>
+	  <div class="page-header">
+         <h1>好友列表 <small>查看每个好友的信息</small></h1>
+	  </div>
       <div class="jumbotron">  
-         <div class="page-header">   
-         </div>
+        <!-- @@include('include/subfriendslist.html') 	-->		
       </div>
     </div>
 </body>

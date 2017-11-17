@@ -1,0 +1,51 @@
+﻿<script type="text/javascript">
+	$(document).ready(function(){
+		  var obj = {
+  "status": 0,
+  "message": "success",
+  "num": 4
+  "data": [
+    {
+      "company": "天津城建大学",
+      "name": "李成",
+      "id": 3
+    },
+    {
+      "company": "北京邮电大学",
+      "name": "刘宁",
+      "id": 4
+    },
+    {
+      "company": "上海交通大学",
+      "name": "王朝",
+      "id": 6
+    },
+    {
+      "company": "南开大学",
+      "name": "张艺品",
+      "id": 5
+    }
+  ]
+}
+	for (var i=0;i<obj.data.length;i++)
+    {
+        var element="<a href=\"http://baidu.com\">" 
+					+ "<div class=\"" 
+					+ getType(i) 
+					+ "\" role=\"alert\"> <span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span> <span> <strong>" 
+					+ obj.data[i].name 
+					+ "</strong> </span> <span class=\"pull-right text-muted small\"> " 
+					+ obj.data[i].company 
+					+" </span>  </div>" + "</a>"; 
+        $(".jumbotron").append(element);		
+    }
+    });
+	
+	function getType(num)
+    {
+        if(num % 4 == 0) return "alert alert-success";
+		if(num % 4 == 1) return "alert alert-info";
+		if(num % 4 == 2) return "alert alert-warning";
+		if(num % 4 == 3) return "alert alert-danger";
+    }
+</script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn-Hans">
 <head>
 		<meta charset="UTF-8">
     <title>友人帐</title>
@@ -11,6 +11,7 @@
 	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 </head>
 <body>
         <nav class="navbar navbar-inverse navbar-static-top">
@@ -43,16 +44,68 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+	﻿<script type="text/javascript">
+	$(document).ready(function(){
+		  var obj = {
+  "status": 0,
+  "message": "success",
+  "num": 3,
+  "data": [
+    {
+      "company": "天津城建大学",
+      "name": "李成",
+      "id": 3
+    },
+    {
+      "company": "北京邮电大学",
+      "name": "刘宁",
+      "id": 4
+    },
+    {
+      "company": "上海交通大学",
+      "name": "王朝",
+      "id": 4
+    },
+    {
+      "company": "南开大学",
+      "name": "张艺品",
+      "id": 5
+    }
+  ]
+}
+	for (var i=0;i<obj.data.length;i++)
+    {
+        var element="<a href=\"http://baidu.com\">" 
+					+ "<div class=\"" 
+					+ getType(i) 
+					+ "\" role=\"alert\"> <span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span> <span> <strong>" 
+					+ obj.data[i].name 
+					+ "</strong> </span> <span class=\"pull-right text-muted small\"> " 
+					+ obj.data[i].company 
+					+" </span>  </div>" + "</a>"; 
+        $(".jumbotron").append(element);		
+    }
+    });
+	
+	function getType(num)
+    {
+        if(num % 4 == 0) return "alert alert-success";
+		if(num % 4 == 1) return "alert alert-info";
+		if(num % 4 == 2) return "alert alert-warning";
+		if(num % 4 == 3) return "alert alert-danger";
+    }
+</script>
 	<script type="text/javascript">
 	$(document).ready(function(){
 		$("#friendslist").addClass("active");
     });
     </script>
 	<div class="container">
-      <h1>好友列表 <small>查看每个好友的信息</small></h1>
+	  <div class="page-header">
+         <h1>好友列表 <small>查看每个好友的信息</small></h1>
+	  </div>
       <div class="jumbotron">  
-         <div class="page-header">   
-         </div>
+        		
       </div>
     </div>
 </body>
